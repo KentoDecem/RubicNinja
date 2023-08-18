@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Tektur&display=swap');
+
+body
+{
+  overflow-x:hidden;
+	background-image: url(images/mini.png);
+	background-repeat:repeat;
+	background-size: auto;
+	height:200vh;
+	margin: 0;
+ 	padding: 0;
+}
+
+#left
+{
+	width: 38.196vw;
+	height:200vh;
+	float:left;
+    transition: 0.5s ease;
+}
+
+#fake-header
+{
+	z-index:1;
+	position:absolute;
+	width:38.196%;
+	top:0;
+	border-top: 61.904vh solid rgb(36, 83, 255);
+	border-right: 6vw solid transparent;
+}
+
+header
+{
+	z-index:2;
+	position:relative;
+	height:61.804vh;
+	width:100%;
+    background: linear-gradient(118deg, rgb(2, 28, 122) 0.99%, rgb(36, 83, 255) 51.09%);
+
+}
+
+#ninja
+{
+  padding-top:17%;
+  text-align:center;
+	margin:0;
+	font-size:45px;
+    color:white;
+	font-family: 'Tektur', cursive;
+	text-shadow: 4px 3px 0px #010101;
+    margin-right:20%;
+}
+
+#logo
+{
+  margin-left:15%;
+  margin-top:25px;
+  width:30%;
+  height:auto;
+  float:left;
+  filter: drop-shadow(0 0 0.75rem black);
+}
+
+nav
+{
+	z-index:3;
+	display: flex;
+	flex-direction: row;
+	justify-content:center;
+	align-items: center;
+	text-align:center;
+	top:0;
+	position:sticky;
+	width:100%;
+	height:38.196vh;
+	font-family: 'Tektur', cursive;
+	background-color: #040404;
+    transition: 0.5s ease;
+    background: linear-gradient(132deg, rgb(65, 80, 95) 0.00%, rgb(36, 37, 38) 74.11%);
+}
+
+#fake-nav
+{
+	z-index:2;
+	top:61.804%;
+	position:absolute;
+	width:38.196%;
+	border-bottom: 38.196vh solid #242526;
+	border-right: 6vw solid transparent;
+	transition: 0.5s ease;
+}
+
+#top, #bottom
+{
+	margin-right:20px;
+	justify-content:center;
+	text-align:center;
+	align-items: center;
+	flex-direction: column;
+}
+
+nav ul
+{
+	text-align:center;
+	margin:0;
+	font-size:35px;
+	list-style-type: none;
+	color: #404040;
+}
+
+nav li
+{	
+	margin-bottom: 35px;
+	margin-top:35px;
+}
+
+nav li a
+{
+	backdrop-filter: blur(2px); /* Rozmycie tła */
+	background-color: rgba(127,127,127, 0.5);
+	transition: 0.5s ease;
+	border: 4px solid #505050;
+	border-radius:  20px 3px 20px 3px;
+	color: white;
+	text-decoration:none;
+  box-shadow: 
+    6px 0px 6px -2px #FFE188,    /* żółty - prawy bok */
+    0px 6px 6px -2px #A9E5A9,    /* zielony - dolny bok */
+    -6px 0px 6px -2px #FF8B8B,   /* czerwony - lewy bok */
+    0px 0px 6px 4px #A7BFFF,    /* niebieski - tylny bok */
+    3px 3px 10px 3px rgba(0, 0, 0, 0.1);  /* delikatny cień */
+}
+
+
+nav li a:hover
+{
+	transition: 0.5s ease;
+	border-radius:  3px 20px 3px 20px;
+	text-shadow:
+  0 0 5px #FFF,
+  0 0 10px #FFF,
+  0 0 15px #FFF,
+  0 0 20px #000,   /* biały - zmieniony kolor */
+  0 0 30px #000,   /* biały - zmieniony kolor */
+  0 0 40px #000,   /* biały - zmieniony kolor */
+  0 0 55px #000,   /* biały - zmieniony kolor */
+  0 0 75px #000 !important;   /* biały - zmieniony kolor */
+
+}
+
+nav li:nth-child(1) a {
+text-shadow: 
+  0 0 5px #FFF,
+  0 0 10px #FFF,
+  0 0 15px #FFF,
+  0 0 20px #00FF00,   /* zielony - zmieniony kolor */
+  0 0 30px #00FF00,   /* zielony - zmieniony kolor */
+  0 0 40px #00FF00,   /* zielony - zmieniony kolor */
+  0 0 55px #00FF00,   /* zielony - zmieniony kolor */
+  0 0 75px #00FF00;   /* zielony - zmieniony kolor */
+
+}
+
+nav li:nth-child(2) a {
+	text-shadow: 
+  0 0 5px #FFF,
+  0 0 10px #FFF,
+  0 0 15px #FFF,
+  0 0 20px #FFA500,   /* pomarańczowy - zmieniony kolor */
+  0 0 30px #FFA500,   /* pomarańczowy - zmieniony kolor */
+  0 0 40px #FFA500,   /* pomarańczowy - zmieniony kolor */
+  0 0 55px #FFA500,   /* pomarańczowy - zmieniony kolor */
+  0 0 75px #FFA500;   /* pomarańczowy - zmieniony kolor */
+}
+
+nav #bottom li:nth-child(1) a {
+	text-shadow:
+  0 0 5px #FFF,
+  0 0 10px #FFF,
+  0 0 15px #FFF,
+  0 0 20px #0094FF,   /* niebieski - zmieniony kolor */
+  0 0 30px #0094FF,   /* niebieski - zmieniony kolor */
+  0 0 40px #0094FF,   /* niebieski - zmieniony kolor */
+  0 0 55px #0094FF,   /* niebieski - zmieniony kolor */
+  0 0 75px #0094FF;   /* niebieski - zmieniony kolor */
+}
+
+nav #bottom li:nth-child(2) a {
+	text-shadow:
+  0 0 5px #FFF,
+  0 0 10px #FFF,
+  0 0 15px #FFF,
+  0 0 20px #FF0000,   /* czerwony - zmieniony kolor */
+  0 0 30px #FF0000,   /* czerwony - zmieniony kolor */
+  0 0 40px #FF0000,   /* czerwony - zmieniony kolor */
+  0 0 55px #FF0000,   /* czerwony - zmieniony kolor */
+  0 0 75px #FF0000;   /* czerwony - zmieniony kolor */
+
+}
+
+main
+{
+	text-align:center;
+	width:61.804vw;
+	float:left;
+	height:100vh;
+	background:#505050;
+    background-image: url(images/qubic.png);
+	background-repeat:repeat;
+	background-size: 60vh;
+    transition: 0.5s ease;
+}
+
+#kid
+{
+	width:30%;
+	height:auto;
+	filter: drop-shadow(0 0 0.75rem black);
+	pointer-events:none;
+	user-select:none;
+	user-drag:none;
+    margin: 0 auto;
+    padding-bottom:1%;
+}
+
+#question
+{
+	width:100%;
+	height:50%;
+	font-family: 'Tektur', cursive;
+	font-size:25px;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+#question-text
+{
+	margin:0;
+    padding-left:25%;
+    padding-right:25%;
+}
+
+
+#line
+{
+  position:absolute;
+  z-index:1;
+  width:100%;
+  right:0;
+  height:10px;
+background: linear-gradient(132deg, rgb(251, 251, 255) 0.00%, rgb(215, 223, 252) 100.00%);
+  filter:blur(10px);
+  bottom:0;
+}
+
+#line2
+{
+  position:absolute;
+  z-index:3;
+  opacity:0;
+  width:100%;
+  bottom:-21%;
+  left:0;
+  height:15px;
+background: linear-gradient(132deg, rgb(221, 221, 221) 0.00%, rgb(110, 136, 161) 100.00%);
+  filter:blur(5px);
+  transition: 0.5s ease;
+}

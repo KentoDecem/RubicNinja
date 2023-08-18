@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rubic Cube</title> 
+	<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+	<div id="left">
+		<header>
+			<img src="images/small.png" id="logo">
+			 <h1 id="ninja">Rubic Ninja</h1>
+		</header>
+			<div id="fake-header"></div>
+
+
+		<nav>
+			<div id="top">
+				<ul>
+					<li><a href="#">Główna</a></li>
+					<li><a href="#">Symulator</a></li>
+				<ul>
+			</div>
+
+			<div id="bottom">
+				<ul>
+					<li><a href="#">Nauka</a></li>
+					<li><a href="#">O nas</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div id="fake-nav"></div>
+	</div>
+
+	<main>
+		<div id="question">
+		<img src="images/kid.png" id="kid">
+		<p id="question-text">Dlaczego kostka Rubika jest świetnym nauczycielem matematyki? Bo potrafi zamienić łatwe zadanie w niekończącą się zagadkę!</p>
+		</div>
+
+		<div id="line"></div>
+		<div id="line2"></div>
+	</main>
+
+
+<script>
+    const divElement = document.getElementById('fake-nav');
+    const leftElement = document.getElementById('left');
+    const line2Element = document.getElementById('line2');
+    const navElement = document.querySelector('nav');
+    const mainElement = document.querySelector('main');
+
+    // Funkcja sprawdzająca, czy nav jest na samej górze ekranu
+    function isNavAtTop() {
+      const navRect = navElement.getBoundingClientRect();
+      return navRect.top == 0 && navRect.bottom <= window.innerHeight;
+    }
+
+    // Funkcja zmieniająca parametry divElement tylko, gdy nav jest na samej górze ekranu
+    function handleScroll() {
+      if (isNavAtTop()) {
+        // Zmieniamy parametry divElement, gdy nav jest na samej górze ekranu
+        divElement.style.borderBottom = '0vh solid #505050';
+        divElement.style.borderTop = '38.196vh solid #242526';
+        divElement.style.borderRight = '6vw solid transparent';
+        divElement.style.width = '38.196%';
+        navElement.style.borderRadius = '0 0 20% 0';
+      } else {
+        // Przywracamy pierwotne parametry divElement, gdy nav nie jest na samej górze ekranu
+        divElement.style.borderBottom = '38.196vh solid #242526';
+        divElement.style.borderTop = '0 solid #505050';
+        divElement.style.borderRight = '6vw solid transparent';
+        divElement.style.width = '38.196%';
+        navElement.style.borderRadius = '0 0 0 0';
+      }
+    }
+
+    // Dodaj nasłuchiwanie na zdarzenie scroll
+    window.addEventListener('scroll', handleScroll);
+
+    // Nowa funkcja zmieniająca tło nav gdy użytkownik dochodzi do końca strony
+    function handleScrollToEnd() {
+      const scrollY = window.scrollY || window.pageYOffset;
+      const documentHeight = Math.max(
+        document.body.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.clientHeight,
+        document.documentElement.scrollHeight,
+        document.documentElement.offsetHeight
+      );
+      const windowHeight = window.innerHeight;
+      if (scrollY + windowHeight === documentHeight) {
+        // Zmieniamy tło nav, gdy użytkownik dochodzi do końca strony
+        navElement.style.color = '#FFF';
+        leftElement.style.width = '100vw';
+        mainElement.style.width = '0vw';
+        navElement.style.height = '20vh';
+        navElement.style.borderRadius = '0 0 0 0';
+        line2Element.style.opacity = '1';
+        line2Element.style.width = '100%';
+      } else {
+        // Przywracamy pierwotne tło nav, gdy użytkownik nie doszedł do końca strony
+        navElement.style.color = '#000';
+        leftElement.style.width = '38.196vw';
+        mainElement.style.width = '61.804vw';
+        navElement.style.height = '38.196vh';
+        line2Element.style.opacity = '0';
+        line2Element.style.width = '0';
+      }
+    }
+
+    // Dodaj nasłuchiwanie na zdarzenie scroll
+    window.addEventListener('scroll', handleScrollToEnd);
+
+    // Nowa funkcja zmieniająca parametry #fake-nav gdy użytkownik użyje scrolla
+    function handleScrollFakeNav() {
+      const scrollY = window.scrollY || window.pageYOffset;
+      if (scrollY > 0) {
+        // Dodaj dowolne zmiany dla #fake-nav
+        // Tutaj możesz dowolnie manipulować parametrami diva o id="fake-nav"
+        divElement.style.borderRadius = '0 0 10px 15px';
+      } else {
+        // Przywracamy pierwotne parametry #fake-nav, gdy użytkownik wróci scrollem do początku
+        divElement.style.borderRadius = '0 0 0 0';
+      }
+    }
+
+    // Dodaj nasłuchiwanie na zdarzenie scroll
+    window.addEventListener('scroll', handleScrollFakeNav);
+  </script>
+
+
+
+</body>
+</html>
